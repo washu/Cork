@@ -23,7 +23,7 @@ local dataobj = Cork:GenerateSelfBuffer(itemname, GetItemIcon(58149),
 	GetSpellInfo(79472),  -- Flask of Titanic Strength
 	GetSpellInfo(94160),  -- Flask of Flowing Water
 	GetSpellInfo(92679),  -- Flask of Battle (Guild Flask)
-	GetSpellInfo(79638),  -- Flask of Enhancement - Strength
+	GetSpellInfo(58149),  -- Flask of Enhancement - Strength
 	GetSpellInfo(79639),  -- Flask of Enhancement - Agilty
 	(GetSpellInfo(79640)) -- Flask of Enhancement - Intellect
 )

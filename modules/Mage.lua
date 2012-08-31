@@ -8,8 +8,8 @@ Cork:GenerateAdvancedSelfBuffer("Armor", {30482, 7302, 6117})
 
 
 -- Fuckus Magic
-local spellname, _, icon = GetSpellInfo(54646)
-Cork:GenerateLastBuffedBuffer(spellname, icon)
+--local spellname, _, icon = GetSpellInfo(54646)
+--Cork:GenerateLastBuffedBuffer(spellname, icon)
 
 
 -- Arcane Briliance

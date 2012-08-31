@@ -40,8 +40,8 @@ function Cork:GenerateItemBuffer(class, itemid, spellid, classspellid)
 	end
 	local function ScanForClass()
 		hasclass = false
-		for i=1,GetNumRaidMembers() do if TestUnit("raid"..i) then hasclass = true; return end end
-		for i=1,GetNumPartyMembers() do if TestUnit("party"..i) then hasclass = true; return end end
+		for i=1,GetNumGroupMembers() do if TestUnit("raid"..i) then hasclass = true; return end end
+		for i=1,GetNumGroupMembers()-1 do if TestUnit("party"..i) then hasclass = true; return end end
 	end
 
 	local function Test(unit)
@@ -76,7 +76,7 @@ function Cork:GenerateItemBuffer(class, itemid, spellid, classspellid)
 
 		-- Only use our item if everyone in need is in range, online and alive
 		local cast = false
-		for i=1,GetNumRaidMembers() do
+		for i=1,GetNumGroupMembers() do
 			local unit = "raid"..i
 			if select(3, GetRaidRosterInfo(unit)) > Cork.RaidThresh() then
 				local _, _, _, _, _, _, zone, online, dead = GetRaidRosterInfo(i)
@@ -85,7 +85,7 @@ function Cork:GenerateItemBuffer(class, itemid, spellid, classspellid)
 				if dataobj[unit] then cast = true end
 			end
 		end
-		for i=1,GetNumPartyMembers() do
+		for i=1,GetNumGroupMembers()-1 do
 			local unit = "party"..i
 			if dataobj[unit] and (not ValidUnit(unit) or IsItemInRange(17202, unit) ~= 1) then return end
 			if dataobj[unit] then cast = true end

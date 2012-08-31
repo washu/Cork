@@ -21,8 +21,9 @@ function Cork.GenerateMacro()
 		elseif c == "WARRIOR" then ooc = GetSpellInfo(6673)
 		elseif c == "DRUID"   then ic, ooc = GetSpellInfo(22812), GetSpellInfo(1126)
 		elseif c == "MAGE"    then ic, ooc = GetSpellInfo(30482), GetSpellInfo(1459)
-		elseif c == "PALADIN" then ic, ooc = GetSpellInfo(21084), GetSpellInfo(19740)
-		elseif c == "PRIEST"  then ic, ooc = GetSpellInfo(588),   GetSpellInfo(21562) end
+		elseif c == "PALADIN" then ic, ooc = GetSpellInfo(20154), GetSpellInfo(19740)
+		elseif c == "PRIEST"  then ic, ooc = GetSpellInfo(588),   GetSpellInfo(21562)
+		elseif c == "MONK"	  then ooc = GetSpellInfo(115921) end
 		if ic and ooc then
 			body = "#showtooltip [combat] "..ic.."; "..ooc.."\n/cast [combat] "..ic.."\n/stopmacro [combat]\n/click CorkFrame"
 		elseif ooc then
