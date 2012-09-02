@@ -39,7 +39,6 @@ modules\Mage.lua
 modules\MageGem.lua
 modules\Paladin.lua
 modules\PaladinBlessings.lua
-modules\PaladinCrusaderAura.lua
 modules\Priest.lua
 modules\RogueWeapon.lua
 modules\Shaman.lua
@@ -61,7 +60,10 @@ modules\Combine.lua
 modules\Glyphs.lua
 modules\Fishboxes.lua
 modules\LancePole.lua
+<<<<<<< HEAD
 #modules\Training.lua
+=======
+>>>>>>> f26e6ae93371cd8deff7a995a70c4ef85949a4e6
 modules\QuestStartingItems.lua
 modules\Dig.lua
 

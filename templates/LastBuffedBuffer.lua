@@ -49,7 +49,7 @@ function Cork:GenerateLastBuffedBuffer(spellname, icon, ignoreself)
 
 
 	local function TestUnit(unit)
-		if not UnitExists(unit) or (GetNumGroupMembers()) == 0 then return end
+		if not UnitExists(unit) or GetNumGroupMembers() == 0 then return end
 		local name, _, _, _, _, _, _, caster = UnitAura(unit, spellname)
 		if not name or not caster or not UnitIsUnit('player', caster) then return end
 		lasttarget = UnitName(unit)
@@ -57,7 +57,7 @@ function Cork:GenerateLastBuffedBuffer(spellname, icon, ignoreself)
 	end
 	local function FindCurrent()
 		if TestUnit("player") then return true end
-		for i=1,GetNumGroupMembers()-1 do if TestUnit("party"..i) or TestUnit("partypet"..i) then return true end end
+		for i=1,GetNumSubgroupMembers() do if TestUnit("party"..i) or TestUnit("partypet"..i) then return true end end
 		for i=1,GetNumGroupMembers() do if TestUnit("raid"..i) or TestUnit("raidpet"..i) then return true end end
 	end
 

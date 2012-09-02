@@ -1,6 +1,7 @@
 
 local myname, Cork = ...
 local ldb, ae = LibStub:GetLibrary("LibDataBroker-1.1"), LibStub("AceEvent-3.0")
+local _
 
 _, Cork.MYCLASS = UnitClass("player")
 
@@ -263,10 +264,7 @@ function Cork.SpellCastableOnUnit(spell, unit)
 end
 
 function Cork.IconLine(icon, text, token)
-	if not icon then
-		icon = "INTERFACE\\WHITE8x8"
-	end
-	return "|T"..icon..":24:24:0:0:64:64:4:60:4:60|t ".. (token and ("|cff".. Cork.colors[token]) or "").. text
+	return "|T"..(icon or "")..":24:24:0:0:64:64:4:60:4:60|t ".. (token and ("|cff".. Cork.colors[token]) or "").. text
 end
 
 local last_thresh
